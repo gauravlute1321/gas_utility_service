@@ -1,0 +1,7 @@
+<ul>
+{% for service_request in service_requests %}
+    <li><a href="{% url 'view_request' service_request.id %}">{{ service_request.type_of_service }} - {{ service_request.status }}</a></li>
+{% empty %}
+    <li>No service requests found.</li>
+{% endfor %}
+</ul>
